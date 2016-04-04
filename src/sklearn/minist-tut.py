@@ -46,10 +46,10 @@ logreg_classifer_obj.fit( minsit_train_set,minsit_train_set_target )
 predicted_logreg = logreg_classifer_obj.predict( minsit_test_set )
 logreg_err_count = sum(array([ [1,0][x==y] for x, y in zip(expected, predicted_logreg)]))
 logreg_tp_count  = minsit_test_set_lenght - logreg_err_count
-# print logestic regression classifier parameters
+# print model test results
 print("------------------------------------------------------------------")
 print(" TEST SAMPLE SIZE      : %4.0f" % minsit_test_set_lenght )
 print("------------------------------------------------------------------")
-print(" SVM    TRUE. PREDICT  : %4.0f  -  %2.2f %%" % (svm_tp_count   ,svm_tp_count/minsit_test_set_lenght*100) )
-print(" LOGREG TRUE. PREDICT  : %4.0f  -  %2.2f %%" % (logreg_tp_count,logreg_tp_count/minsit_test_set_lenght*100) )
+print(" SVM    TRUE. PREDICT  : %4.0f  -  %2.2f %%" % ( svm_tp_count   , svm_tp_count / minsit_test_set_lenght    * 100) )
+print(" LOGREG TRUE. PREDICT  : %4.0f  -  %2.2f %%" % ( logreg_tp_count, logreg_tp_count / minsit_test_set_lenght * 100) )
 print("------------------------------------------------------------------")
